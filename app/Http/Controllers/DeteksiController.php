@@ -37,7 +37,7 @@ class DeteksiController extends Controller
             'assets/image', 'public'
         );
 
-        $command = 'py string.py "storage/'.$data['gambar'].'"';
+        $command = 'python3 string.py "storage/'.$data['gambar'].'"';
         // dd($command);
         $process = exec($command);
         // dd($process);
