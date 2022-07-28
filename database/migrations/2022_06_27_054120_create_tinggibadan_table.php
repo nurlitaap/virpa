@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('tinggibadan', function (Blueprint $table) {
             $table->id();
+            $table->string('uid');
             $table->string('name');
             $table->string('jenis_kelamin');
             $table->string('umur');
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->date('tanggal_masuk');
             $table->string('tinggi_badan');
             $table->string('status');
+            $table->string('growthID');
             $table->timestamps();
         });
     }

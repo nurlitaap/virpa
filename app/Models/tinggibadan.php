@@ -10,13 +10,15 @@ class tinggibadan extends Model
     use HasFactory;
 
     protected $fillable = [
+        'uid',
         'name',
         'jenis_kelamin',
         'umur',
         "ttl",
         'tanggal_masuk',
         'tinggi_badan',
-        'status'
+        'status',
+        'growthID',
     ];
 
     protected $table = 'tinggibadan';

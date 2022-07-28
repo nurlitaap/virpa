@@ -10,6 +10,7 @@ class datalingkar extends Model
     use HasFactory;
 
     protected $fillable = [
+        'uid',
         'name',
         'jenis_kelamin',
         'umur',
@@ -21,7 +22,8 @@ class datalingkar extends Model
         'tinggi_badan',
         'status_tinggi',
         'berat_badan',
-        'status_berat'
+        'status_berat',
+        'growthID',
     ];
 
     protected $table = 'datalingkar';

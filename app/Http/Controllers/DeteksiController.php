@@ -340,15 +340,8 @@ class DeteksiController extends Controller
         $data = $request->all();
         
         $validator = Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
             'jenis_kelamin' => ['required', 'string', 'max:255'],
             'umur' => ['required', 'string', 'max:255'],
-            'ttl' => ['required', 'date'],
-            'tanggal_masuk' => ['required', 'date'],
-            'tinggi_badan' => ['required', 'string', 'max:255'],
-            'status_tinggi' => ['required', 'string', 'max:255'],
-            'berat_badan' => ['required', 'string', 'max:255'],
-            'status_berat' => ['required', 'string', 'max:255'],
             'gambar' => ['required'],
         ]);
         
@@ -362,7 +355,7 @@ class DeteksiController extends Controller
             'assets/image', 'public'
         );
 
-        $command = 'python3 string.py "storage/'.$data['gambar'].'"';
+        $command = 'python3 string.py "../storage/app/public/'.$data['gambar'].'"';
         //  dd($command);
         $process = exec($command);
         //  dd($process);
@@ -624,8 +617,15 @@ class DeteksiController extends Controller
          
         $data['status'] = $status;
         // dd($request)->all();
-        datalingkar::create($data);
-        return response()->json([$data], 200);
+        // datalingkar::create($data);
+        return response()->json([
+            'data' => [
+                'lingkar_kepala' => $hasil,
+                'status' => $status,
+                'pathGambar' => $data['gambar'],
+            ],
+            'message' => 'Sukses!'
+        ], 200);
         // return back()->with('Selesai','Data Berhasil Disimpan');
     }
 }

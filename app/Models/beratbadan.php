@@ -10,13 +10,15 @@ class beratbadan extends Model
     use HasFactory;
 
     protected $fillable = [
+        'uid',
         'name',
         'jenis_kelamin',
         'umur',
         "ttl",
         'tanggal_masuk',
         'berat_badan',
-        'status'
+        'status',
+        'growthID',
     ];
 
     protected $table = 'beratbadan';

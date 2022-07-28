@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DeteksiController;
@@ -16,3 +17,4 @@ use App\Http\Controllers\DeteksiController;
 */
 
 Route::post('/deteksi', [DeteksiController::class, 'api']);
+Route::post('/save-data', [DataController::class, 'saveData']);

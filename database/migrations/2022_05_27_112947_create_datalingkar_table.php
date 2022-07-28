@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('datalingkar', function (Blueprint $table) {
             $table->id();
+            $table->string('uid');
             $table->string('name');
             $table->string('jenis_kelamin');
             $table->string('umur');
@@ -27,6 +28,7 @@ return new class extends Migration
             $table->string('status_tinggi');
             $table->string('berat_badan');
             $table->string('status_berat');
+            $table->string('growthID');
             $table->timestamps();
         });
     }
